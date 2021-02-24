@@ -58,6 +58,6 @@ unique(as.vector(seqnames(rowRanges(rse))))
 ##PA VER LA MEMORIA QUE ABARCA
  pryr::object_size(rse)
 
- QUE ES LO QUE ESTA PASANDO EN ESTOS DOS COMANDOS
+# QUE ES LO QUE ESTA PASANDO EN ESTOS DOS COMANDOS
  rse[1:2, ]
  rse[ , c("A","B","C")]
