@@ -230,6 +230,10 @@ de_results <- topTable(
 )
 dim(de_results)
 head(de_results)
+
+#####
+identical(sign(de_results$logFC), sign(de_results$t))
+
 ## Genes diferencialmente expresados entre pre y post natal con FDR < 5%
 table(de_results$adj.P.Val < 0.05)
 ## Visualicemos los resultados estadísticos
@@ -249,6 +253,8 @@ De `vGene$E` podemos extraer los datos normalizados por `limma-voom`. Revisemos 
 
 ```{r pheatmap}
 ## Extraer valores de los genes de interés
+##$E los datos ya normalizads
+##de los 50 primeros, ver cuales son y sus valores de expresion normalizados!!!!!!!!!!!!!!!!
 exprs_heatmap <- vGene$E[rank(de_results$adj.P.Val) <= 50, ]
 ## Creemos una tabla con información de las muestras
 ## y con nombres de columnas más amigables
@@ -265,6 +271,11 @@ pheatmap(
   annotation_col = df
 )
 ```
+####en grafica de -log10(pvalue)~ log2 fold ..valores mas extremos de pvalue ::
+###
+#####genecards
+
+
 
 Los resultados que tenemos no son tan sorprendentes porque hay una diferencia enorme en los perfiles de expresión en el DLPFC entre muestra pre y post-natales. Eso lo podemos ver con MDS (multidimensional scaling) tal como describen en [este workflow](http://bioconductor.org/packages/release/workflows/vignettes/RNAseq123/inst/doc/limmaWorkflow.html#unsupervised-clustering-of-samples).
 
