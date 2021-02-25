@@ -61,3 +61,22 @@ unique(as.vector(seqnames(rowRanges(rse))))
 # QUE ES LO QUE ESTA PASANDO EN ESTOS DOS COMANDOS
  rse[1:2, ]
  rse[ , c("A","B","C")]
+
+ ## Explora el objeto rse de forma interactiva
+ library("iSEE")
+ iSEE::iSEE(rse)
+###########
+ #########
+ #
+ #
+ #
+ #
+ #
+ #
+ #
+ ## Descarguemos unos datos de spatialLIBD
+ sce_layer <- spatialLIBD::fetch_data("sce_layer")
+ sce_layer
+ library("iSEE")
+ iSEE::iSEE(sce_layer)
+
