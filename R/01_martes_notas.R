@@ -31,10 +31,10 @@ gert::git_push()
 #escribimos un nuevo archivo
 writeLines("hola", "R/prueba.R")
 #Por ejemplo podríamos probar añadir algo nuevo
-gert::git_add("R/prueba.R")
+gert::git_add("R/01_martes_notas.R")
 
 #añadimos commit de lo que se hizo
-gert::git_commit("prueba gert")
+gert::git_commit("prueba resubir archivo")
 
 gert::git_log() #nos da info
 
