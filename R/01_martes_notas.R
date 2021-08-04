@@ -28,4 +28,14 @@ usethis::use_github()
 
 #PUSH!!!!!!!!!!!!!!!!!!!!!!!!
 gert::git_push()
+#escribimos un nuevo archivo
+writeLines("hola", "R/prueba.R")
+#Por ejemplo podríamos probar añadir algo nuevo
+gert::git_add("R/prueba.R")
 
+#añadimos commit de lo que se hizo
+gert::git_commit("prueba gert")
+
+gert::git_log() #nos da info
+
+gert::git_push() #sube tus cambios del repo local
